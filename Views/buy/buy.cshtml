@@ -1,0 +1,295 @@
+﻿
+@{
+    ViewBag.Title = "buy";
+}
+      @{
+    
+    Layout="~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+    <!-- nav bar is coompleted here-->
+
+    <div class="container-fluid" style="margin-left:14%">
+       <h1>Wellcome @ViewBag.name  </h1>
+        <p></p>
+        <h2>OUR FAMOUS BOOKS</h2>
+       
+       <div class="row" style="margin-top:6%">
+            <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Fatawa-Women.jpg" width="228" height="184">
+                        <p>Fatawa-Women</p>
+                             
+                        
+                    </form>
+
+                </div>
+                <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        
+                             <img src="/Files/Gusal-ka-tareeka.gif" width="228" height="184">
+                        <p>Gusal-ka-tareeka</p>
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Halal-or-haram.jpg" width="228" height="184">
+                        <p>Halal-or-haram</p>
+                             
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Haya-or-pak damni.jpg" width="228" height="184">
+                        <p>Haya-or-pak damni</p>
+                             
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        
+                             <img src="/Files/Islam-Per-Etaraazaat.jpg" width="228" height="184">
+                        <p>Islam-Per-Etaraazaat</p>
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        
+                             <img src="/Files/Jadu-Tuna-Ka-Elaj.jpg" width="228" height="184">
+                        <p>Jadu-Tuna-Ka-Elaj</p>
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        
+                             <img src="/Files/Maloomat-Tareekh-Islam-in.jpg" width="228" height="184">
+                        <p>Maloomat-Tareekh-Islam-in</p>
+                   
+                    </form>
+
+                </div>   <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        
+                          <img src="/Files/Manzil-Arabic-Urdu-Version.jpg" width="228" height="184">
+                        <p>Manzil-Arabic-Urdu-Version</p>   
+                   
+                    </form>
+
+                </div>
+                <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Masnoon-nikah.jpg" width="228" height="184">
+                        <p>Masnoon-nikah</p>
+                             
+                   
+                    </form>
+
+                </div>
+           <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Aasan-hal.jpg" width="228" height="184">
+                        <p>Aasan-hal</p>
+                             
+                   
+                    </form>
+
+                </div>
+           <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Moota-imam-malik.jpg" width="228" height="184">
+                        <p>Moota-imam-malik</p>
+                             
+                   
+                    </form>
+
+                </div>
+           <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form  method="post">
+                        <img src="/Files/Takdeer.jpg" width="228" height="184">
+                        <p>Takdeer</p>
+                             
+                   
+                    </form>
+
+                </div>
+           </div>
+        <div>
+            <p></p>
+           <h2> OUR OTHER MANY BOOKS ONLINE AVAILABLE</h2>
+               
+                @foreach (var x in Model)
+                 {
+                    <div class="col-md-3" style="border:solid;margin-left:5%;margin-top:5%; border-color:#1c8787">
+                    <form action="/buy/addcart/@x.Itemid" method="post">
+                        <a href="/Files/@x.filename"><!--<img src="/Files/@x.filename" width="228" height="184">--></a>
+                            
+                            <p>@x.Iname</p>
+                            <p>@x.Iprice RS </p>
+                             
+                        <p><input type="submit" style="margin-left:20%" value="ADD TO CART"/> </p>
+                   
+                    </form>
+                </div>
+            
+                 }
+               
+
+           
+           
+          <!-- <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787" >
+                <img src="/Images/59f088cdfc092af56ca50a19989cf3e0.image.229x182.jpg" />
+               <p>Arduino Mega Uno Rev3</p>
+               <p>8000 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/4578f41d9764a5c236470019f05dd2bc.image.229x182.jpg" />
+               <p>Arduino Uno Rev</p>
+               <p>2000 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>
+        <div class="row" style="margin-top:6%">
+           <div class="col-md-3" style="border:solid; border-color:#1c8787">
+               <img src="/Images/a9c42747cecad96430825f09c52923cf.image.229x182.jpg" />
+               <p>Arduino Due</p>
+               <p>2500 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+               
+
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787" >
+                <img src="/Images/3a427c848428c2713dfc5e956c117eb7.image.229x182.jpg" />
+               <p>Arduino Micro</p>
+               <p>2500 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/04b6bc0b6326250935729434c34890db.image.229x182.jpg" />
+               <p>Arduino Robot</p>
+               <p>30000 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>
+
+        <h1>ARDUINO SENSORS</h1>
+
+          <div class="row" style="margin-top:6%";margin-left:5%>
+           <div class="col-md-3" style="border:solid; border-color:#1c8787">
+               <img src="/Images/97a8e5a3fde2360f19e3a1c2c2d9fafd.image.229x182.jpg" />
+               <p>Tempreture Sensor</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+               
+
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787" >
+                <img src="/Images/966c62ce179ce2ddfdcdaf47bc0b2407.image.229x182.jpg" />
+               <p>Light Sensors</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/a304f0ef54c1e37c2f5d8f342e0cffbd.image.229x182.jpg" />
+               <p>Potentiometer</p>
+               <p>150 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>
+        <div class="row" style="margin-top:6%">
+           <div class="col-md-3" style="border:solid; border-color:#1c8787">
+               <img src="/Images/5545017fddf2b5b73ab6177fe960f636.image.229x182.jpg" />
+               <p>Luminosity Sensor</p>
+               <p>2000 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+               
+
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787" >
+                <img src="/Images/c5475309e64bdfaee446ae20cfc850dd.image.229x182.jpg" />
+               <p>LCD</p>
+               <p>1800 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/253240bdd833b3667320959ad80c1aed.image.229x182.jpg" />
+               <p>10k Trimers</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>
+       <h1>ARDUINO TOOL</h1>
+        <div class="row" style="margin-top:6%";margin-left:5%>
+           <div class="col-md-3" style="border:solid; border-color:#1c8787">
+               <img src="/Images/5b7c558f3b618e9876e2255df6d297ac.image.229x182.jpg" />
+               <p>LCD Display</p>
+               <p>1500RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+               
+
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787" >
+                <img src="/Images/6d7c02b59f46da1730497ea0c7522f35.image.229x182.jpg" />
+               <p>Electonic Multimeter</p>
+               <p>1800 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/0526341b5d3df736e3b02b3721eac290.image.229x182.jpg" />
+               <p>Screwdriver Set</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>
+        <div class="row" style="margin-top:6%">
+          
+           <div class="col-md-3" style="border:solid ;border-color:#1c8787" >
+                <img src="/Images/e4d5ed215961e3951c943bec96f8e9dd.image.229x182.jpg" />
+               <p>USB Digital Microscope</p>
+               <p>5000 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+           
+           <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/eccfa809898e64fc40924abb8ac3b835.image.229x182.jpg" />
+               <p>Wire Striper</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+            <div class="col-md-3" style="border:solid ;margin-left:5%;border-color:#1c8787">
+                <img src="/Images/de20228afc5e81abe2b0b2658307390f.image.229x182.jpg" />
+               <p>Micro Cutting Plier</p>
+               <p>200 RS  <button type="button" style="margin-left:20%">ADD TO CART</button>  
+                   </p>
+           </div>
+       </div>-->
+       
+    </div>
+    
+     <!-- page footer -->
+    
+
+
+        </div>
+
+
+
+
+   
+

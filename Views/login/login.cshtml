@@ -1,0 +1,73 @@
+﻿@model arduinoWebProject.Models.login
+@{
+    ViewBag.Title = "login";
+}
+      @{
+    
+    Layout="~/Views/Shared/_Layout.cshtml";
+    
+}
+ 
+
+
+        <!-- nav bar is coompleted here-->
+    <div class="container" style="margin-bottom:20px">
+    <div class=" row">
+ 
+
+        
+       
+        
+        <div class="col-md-7"  style="margin-left:220px">
+           
+             @using (Html.BeginForm("checkAccount", "login", FormMethod.Post))
+                {
+            <div class ="form-login"   style="margin-left:8%">
+           <label id=" p4" style="color:red">@ViewBag.error</label>
+            <h2 style="color:#1c8787">Log-in</h2>
+            <P style="color:#808080">@Html.Label("User Name")</p>
+            @Html.TextBoxFor(x=>x.uname,new {@class="form-control input-sm chat-input" })
+                 @Html.ValidationMessageFor(x=>x.uname)
+                <br/>
+              
+            <p style="color:#808080">@Html.Label("Password")</p>
+                @Html.TextBoxFor(x => x.pwd, new {@class="form-control input-sm chat-input", type = "password" })
+                 @Html.ValidationMessageFor(x=>x.pwd)
+            <br/>
+          
+            <p style ="color:#808080"><input type="checkbox" /> Remember me</p>
+                
+            <P>@Html.ActionLink("Reset Password", "resetpassword", "signup", new { style="color:#1c8787;font:bold"},null) or 
+            @Html.ActionLink("SignUp", "signup", "signup", new { style="color:#1c8787"},null)
+                
+            <button type="submit" value="LOGIN"         style="background-color:#1c8787; color:white;margin-left:50%">LOGIN</button>
+            </p>
+                        
+                 
+
+               
+             
+        </div>
+             }
+        </div>
+
+        
+    
+        </div>
+     <!-- page footer -->
+  
+        </div>
+    
+
+
+
+
+
+
+
+
+   
+
+
+
+

@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "cart";
+}
+
+        
+
+
+  
+
+      @{
+    
+    Layout="~/Views/Shared/_Layout.cshtml";
+    
+}
+
+        <!-- nav bar is coompleted here-->
+    <div class="container" style="margin-bottom:20px">
+    <div class=" row">
+    
+
+
+       
+
+        <div class="col-md-7"  style="margin-left:220px">
+            
+            <div class ="form-login"   style="margin-left:8%">
+               
+            <form method="post" action="/cart/countinue">
+
+            
+                
+                    <h2 style="color:#1c8787">CART</h2>
+                 <hr>
+               
+                <div >
+                     <label style="margin-left:10px">ID</label><label style="margin-left:50px">Name</label><label style="margin-left:50px">Price</label> <label style="margin-left:70px">Remove</label>
+                   <br />
+                    <hr />
+                                   @{
+                                       var total=0;
+                                       foreach (var x in Model)
+                                    {
+                                         
+                                    total = total + x.Iprice;
+                                    
+                                         
+                                             <label style="margin-left:10px">@x.Itemid </label><label style="margin-left:50px">  @x.Iname </label><label style="margin-left:50px">  @x.Iprice</label> <label style="margin-left:70px"><a href="/cart/removecart/@x.Itemid"> Remove</a></label>
+                                                <br>
+                                                
+
+                                    
+                                     }
+                                     
+                                       
+                                   }
+
+                  
+
+                                
+                                
+                                    
+                                       
+                                    
+                                    
+                                       
+                                
+                    </div>
+                    <hr>
+                 
+                      <p id="p3">The Total Price is : @total</p>
+                        
+                    
+                    
+               
+
+                
+                
+                    <input type="submit" value="Countinue Shoping"  style="background-color:#1c8787; color:white;margin-left:50%"/>
+                
+                </form>
+                   
+                 
+
+               
+             
+        </div>
+
+             
+        </div>
+
+        
+    
+        </div>
+     <!-- page footer -->
+  
+        </div>
+    
+
+
+
+
+
+
+
+
+
+   
+
+
+

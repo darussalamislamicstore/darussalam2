@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.field-validation-error {
+    font-weight:bold;
+    color:red;
+}
+
+.validation-summary-errors {
+    font-weight:bold;
+    color:red;
+}

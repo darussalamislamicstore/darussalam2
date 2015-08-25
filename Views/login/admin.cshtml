@@ -1,0 +1,47 @@
+﻿@model arduinoWebProject.Models.item
+@{
+    ViewBag.Title = "admin";
+}
+
+      @{
+    
+    Layout="~/Views/Shared/_Layout.cshtml";
+    
+}
+ <div class="container" style="margin-bottom:20px">
+    <div class=" row">
+    
+
+        
+       
+
+        <div class="col-md-7"  style="margin-left:220px">
+
+             <form action="/login/uploadimage" method="post" enctype="multipart/form-data" >
+            <div class ="form-login"   style="margin-left:8%">
+                 <h1> Add new Item</h1>
+                    <P style="color:#808080">@Html.Label("Item name")</p>
+            @Html.TextBoxFor(x=>x.Iname,new {@class="form-control input-sm chat-input" })
+                <br />
+                    <P style="color:#808080">@Html.Label("Item Price")</p>
+            @Html.TextBoxFor(x=>x.Iprice,new {@class="form-control input-sm chat-input" })
+                <br />
+                  <P style="color:#808080">@Html.Label("Item image")</p>
+                 <input type="file" name="image" style="background-color:#1c8787"/>
+                         <input type="submit" value="upload" style="background-color:#1c8787; color:white;margin-left:90%" />
+            
+                        
+                 
+
+               
+             
+        </div>
+             </form>
+        </div>
+
+        
+    
+        </div>
+     <!-- page footer -->
+  
+        </div>
